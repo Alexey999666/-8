@@ -1,0 +1,63 @@
+﻿<Window x:Class="практос_8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:практос_8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="202"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Menu  Grid.Row="0"  Grid.ColumnSpan="4">
+            <MenuItem Header="Файл"  Background="DarkViolet" Foreground="Gold">
+                <MenuItem Header="Выйти" Click="btnExit_Click" Background="DarkViolet" Foreground="Gold"/>
+            </MenuItem>
+            <MenuItem Header="Действия"  Background="DarkViolet" Foreground="Gold">
+                <MenuItem Header="Установить1" Click="btnStartNumber1_Click" ToolTip="Установить начальное значение для первого объекта" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Установить2" Click="btnStartNumber2_Click" ToolTip="Установить начальное значение для второго объекта" Background="DarkViolet" Foreground="Gold" />
+                <MenuItem Header="Возврат1" ToolTip="Прировнять текущее значение к стартовому значению" Click="btnReset1_Click" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Возврат2" ToolTip="Прировнять текущее значение к стартовому значению" Click="btnReset2_Click" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Следущее значение1" ToolTip="Создает и показывает следущее значение" Click="btnNext1_Click"  Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Следущее значение2" ToolTip="Создает и показывает следущее значение" Click="btnNext2_Click" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Сравнить" ToolTip="Сравнивает два текущих значеия"  Click="btnCompare_Click" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Клонировать" ToolTip="Клонируем объект" Click="btnClone_Click" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Очистить"  Click="btnClean_Click"  Background="DarkViolet" Foreground="Gold"/>
+            </MenuItem>
+            <MenuItem Header="Справка" Background="DarkViolet" Foreground="Gold">
+                <MenuItem Header="О программе" Click="btnInfo_Click" Background="DarkViolet" Foreground="Gold"/>
+                <MenuItem Header="Разработчик" Click="btnDeveloper_Click" Background="DarkViolet" Foreground="Gold"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0.333,4.667,-53.667"  >
+            <Label Content="Установить начальное значение"  HorizontalContentAlignment="Center" Margin="0,5,0,5"/>
+            <TextBox x:Name="tbStartNumber1" TextWrapping="Wrap" Height="30" TextAlignment="Center"  Margin="0,5,0,5" />
+            <Button Content="Установить" ToolTip="Установить начальное значение для первого объекта" Click="btnStartNumber1_Click" Height="30" Margin="0,5,0,5"/>
+            <Button Content="Возврат" ToolTip="Прировнять текущее значение к стартовому значению" Click="btnReset1_Click" Height="30" Margin="0,5,0,5" />
+            <Button Content="Следущее значение" ToolTip="Создает и показывает следущее значение" Click="btnNext1_Click" Height="30" Margin="0,5,0,5"/>
+            <TextBox x:Name="tbNext1" IsReadOnly="True" TextWrapping="Wrap" Height="40" TextAlignment="Center"  Margin="0,5,0,5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="0.333,0.333,0.333,-53.667">
+            <Label Content="Установить начальное значение"  HorizontalContentAlignment="Center" Margin="0,5,0,5"/>
+            <TextBox x:Name="tbStartNumber2" TextWrapping="Wrap" Height="30" TextAlignment="Center"  Margin="0,5,0,5" />
+            <Button Content="Установить" ToolTip="Установить начальное значение для второго объекта" Click="btnStartNumber2_Click" Height="30" Margin="0,5,0,5"/>
+            <Button Content="Возврат" ToolTip="Прировнять текущее значение к стартовому значению"  Click="btnReset2_Click" Height="30" Margin="0,5,0,5" />
+            <Button Content="Следущее значение" ToolTip="Создает и показывает следущее значение" Click="btnNext2_Click" Height="30" Margin="0,5,0,5"/>
+            <TextBox x:Name="tbNext2" IsReadOnly="True" TextWrapping="Wrap" Height="40" TextAlignment="Center"  Margin="0,5,0,5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="4.667,0.333,0,-33.667">
+            <Button Content="Сравнить" ToolTip="Сравнивает два текущих значеия" Click="btnCompare_Click" Height="30" Margin="0,5,0,5" />
+            <Button Content="Клонировать" ToolTip="Клонируем объект" Click="btnClone_Click" Height="30" Margin="0,5,0,5" />
+            <TextBox x:Name="tbClone" IsReadOnly="True" TextWrapping="Wrap" Height="40" TextAlignment="Center"  Margin="0,5,0,5"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
